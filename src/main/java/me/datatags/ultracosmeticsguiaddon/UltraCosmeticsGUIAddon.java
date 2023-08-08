@@ -7,7 +7,10 @@ public class UltraCosmeticsGUIAddon extends JavaPlugin {
     public static final byte[] PACK_HASH = hexStringToByteArray("69e2f55fed03602a0f220d8524fa00771456343b");
     @Override
     public void onEnable() {
-        be.isach.ultracosmetics.UltraCosmeticsData.get();
+        saveDefaultConfig();
+        if (getConfig().getBoolean("Send pack to players", true)) {
+            getServer().getPluginManager().registerEvents(new ResourcePackListener(), this);
+        }
     }
     // https://stackoverflow.com/a/140861
     /* s must be an even-length string. */

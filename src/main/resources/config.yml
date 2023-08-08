@@ -1,0 +1,4 @@
+# Whether the resource pack should be sent to players upon joining.
+# Disable this if you have another plugin that handles this or use
+# a different resource pack in server.properties.
+Send pack to players: true

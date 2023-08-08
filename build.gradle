@@ -16,5 +16,10 @@ repositories {
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
-    compileOnly 'be.isach.UltraCosmetics:core:3.4'
+    implementation ('be.isach.UltraCosmetics:core:3.4') {
+        attributes {
+            // Depend on the version with dependencies shaded so we don't need to shade them separately
+            attribute(Bundling.BUNDLING_ATTRIBUTE, getObjects().named(Bundling, Bundling.SHADOWED))
+        }
+    }
 }
