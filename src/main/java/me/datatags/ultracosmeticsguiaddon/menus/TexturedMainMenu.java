@@ -4,6 +4,7 @@ import be.isach.ultracosmetics.UltraCosmetics;
 import be.isach.ultracosmetics.UltraCosmeticsData;
 import be.isach.ultracosmetics.config.MessageManager;
 import be.isach.ultracosmetics.cosmetics.Category;
+import be.isach.ultracosmetics.menu.Button;
 import be.isach.ultracosmetics.menu.Menu;
 import be.isach.ultracosmetics.menu.buttons.ClearCosmeticButton;
 import be.isach.ultracosmetics.menu.buttons.KeysButton;
@@ -11,6 +12,8 @@ import be.isach.ultracosmetics.menu.buttons.OpenChestButton;
 import be.isach.ultracosmetics.menu.buttons.OpenCosmeticMenuButton;
 import be.isach.ultracosmetics.player.UltraPlayer;
 import be.isach.ultracosmetics.shaded.adventure.text.Component;
+import be.isach.ultracosmetics.shaded.adventure.text.format.NamedTextColor;
+import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleButtonWrapper;
 import org.bukkit.inventory.Inventory;
 
 /**
@@ -20,50 +23,20 @@ import org.bukkit.inventory.Inventory;
  * @since 08-23-2016
  */
 public class TexturedMainMenu extends Menu {
-    private final Component title = MessageManager.getMessage("Menu.Main.Title");
-    private int[] layout;
+    private final Component title = Component.text(generateTitle(), NamedTextColor.WHITE);
+
+    private static String generateTitle() {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < 8; i++) {
+            // Dice emoji
+            builder.append("\uD83C\uDFB2");
+        }
+        // House emoji
+        return builder.append("\uD83C\uDFE0").toString();
+    }
 
     public TexturedMainMenu(UltraCosmetics ultraCosmetics) {
         super(ultraCosmetics);
-
-        switch (Category.enabledSize()) {
-            case 10:
-                layout = new int[] {9, 11, 13, 15, 17, 27, 29, 31, 33, 35};
-                break;
-            case 9:
-                layout = new int[] {9, 11, 13, 15, 17, 28, 30, 32, 34};
-                break;
-            case 8:
-                layout = new int[] {10, 12, 14, 16, 28, 30, 32, 34};
-                break;
-            case 7:
-                layout = new int[] {10, 13, 16, 28, 30, 32, 34};
-                break;
-            case 6:
-                layout = new int[] {10, 13, 16, 28, 31, 34};
-                break;
-            case 5:
-                layout = new int[] {10, 16, 22, 29, 33};
-                break;
-            case 4:
-                layout = new int[] {19, 21, 23, 25};
-                break;
-            case 3:
-                layout = new int[] {20, 22, 24};
-                break;
-            case 2:
-                layout = new int[] {21, 23};
-                break;
-            case 1:
-                layout = new int[] {22};
-                break;
-        }
-
-        if (UltraCosmeticsData.get().areTreasureChestsEnabled() && layout != null) {
-            for (int i = 0; i < layout.length; i++) {
-                layout[i] += 9;
-            }
-        }
     }
 
     @Override
@@ -77,23 +50,32 @@ public class TexturedMainMenu extends Menu {
 
     @Override
     protected void putItems(Inventory inventory, UltraPlayer player) {
-        if (Category.enabledSize() > 0) {
-            int i = 0;
-            boolean foundSuits = false;
-            for (Category category : Category.enabled()) {
-                // Avoid counting suits categories as different menu items
-                if (category.isSuits()) {
-                    if (foundSuits) continue;
-                    foundSuits = true;
-                }
-                putItem(inventory, layout[i++], new OpenCosmeticMenuButton(getUltraCosmetics(), category), player);
-            }
+        putCategory(inventory, 2, Category.PETS, player);
+        putCategory(inventory, 3, Category.GADGETS, player);
+        putCategory(inventory, 4, Category.EFFECTS, player);
+        putCategory(inventory, 5, Category.MOUNTS, player);
+        putCategory(inventory, 6, Category.MORPHS, player);
+        putCategory(inventory, 11, Category.HATS, player);
+        putCategory(inventory, 12, Category.SUITS_HELMET, player);
+        putCategory(inventory, 13, Category.EMOTES, player);
+        putCategory(inventory, 14, Category.PROJECTILE_EFFECTS, player);
+        putCategory(inventory, 15, Category.DEATH_EFFECTS, player);
+
+        InvisibleButtonWrapper openChest = new InvisibleButtonWrapper(new OpenChestButton(ultraCosmetics));
+        InvisibleButtonWrapper keys = new InvisibleButtonWrapper(new KeysButton(ultraCosmetics));
+        for (int i = 30; i < 33; i++) {
+            putItem(inventory, i, openChest, player);
+            putItem(inventory, i + 9, keys, player);
         }
-        putItem(inventory, inventory.getSize() - 5, new ClearCosmeticButton(), player);
-        if (UltraCosmeticsData.get().areTreasureChestsEnabled()) {
-            putItem(inventory, 5, new KeysButton(ultraCosmetics), player);
-            putItem(inventory, 3, new OpenChestButton(ultraCosmetics), player);
-        }
+        putInvisibleItem(inventory, 43, new ClearCosmeticButton(), player);
+    }
+
+    protected void putCategory(Inventory inventory, int slot, Category category, UltraPlayer player) {
+        putInvisibleItem(inventory, slot, new OpenCosmeticMenuButton(getUltraCosmetics(), category), player);
+    }
+
+    protected void putInvisibleItem(Inventory inventory, int slot, Button button, UltraPlayer player) {
+        putItem(inventory, slot, new InvisibleButtonWrapper(button), player);
     }
 
     @Override
@@ -103,7 +85,7 @@ public class TexturedMainMenu extends Menu {
 
     @Override
     protected int getSize() {
-        return UltraCosmeticsData.get().areTreasureChestsEnabled() ? 54 : 45;
+        return 54;
     }
 
 }

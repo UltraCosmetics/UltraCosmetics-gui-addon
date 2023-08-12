@@ -1,26 +1,35 @@
 package me.datatags.ultracosmeticsguiaddon;
 
+import be.isach.ultracosmetics.UCAddon;
+import be.isach.ultracosmetics.UltraCosmetics;
+import be.isach.ultracosmetics.UltraCosmeticsData;
+import be.isach.ultracosmetics.menu.Menus;
+import me.datatags.ultracosmeticsguiaddon.menus.TexturedMainMenu;
+import me.datatags.ultracosmeticsguiaddon.menus.TexturedMenuPurchase;
+import org.bukkit.Material;
+import org.bukkit.event.HandlerList;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class UltraCosmeticsGUIAddon extends JavaPlugin {
-    public static final String PACK_URL = "https://github.com/dennishzg/uc-gui/releases/download/v1.0.0/UC-GUI-v1.0.0.zip";
-    public static final byte[] PACK_HASH = hexStringToByteArray("69e2f55fed03602a0f220d8524fa00771456343b");
+public class UltraCosmeticsGUIAddon extends JavaPlugin implements UCAddon {
     @Override
     public void onEnable() {
+        UltraCosmetics ultraCosmetics = UltraCosmeticsData.get().getPlugin();
+        ultraCosmetics.registerAddon(this);
+        reload(ultraCosmetics);
+    }
+
+    @Override
+    public void reload(UltraCosmetics ultraCosmetics) {
+        HandlerList.unregisterAll(this);
         saveDefaultConfig();
         if (getConfig().getBoolean("Send pack to players", true)) {
-            getServer().getPluginManager().registerEvents(new ResourcePackListener(), this);
+            getServer().getPluginManager().registerEvents(new ResourcePackListener(this), this);
         }
-    }
-    // https://stackoverflow.com/a/140861
-    /* s must be an even-length string. */
-    private static byte[] hexStringToByteArray(String s) {
-        int len = s.length();
-        byte[] data = new byte[len / 2];
-        for (int i = 0; i < len; i += 2) {
-            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
-                    + Character.digit(s.charAt(i+1), 16));
-        }
-        return data;
+        getLogger().info("Loading menus");
+        Menus menus = ultraCosmetics.getMenus();
+        menus.setMainMenu(new TexturedMainMenu(ultraCosmetics));
+        menus.setMenuPurchaseFactory(TexturedMenuPurchase::new);
     }
 }
