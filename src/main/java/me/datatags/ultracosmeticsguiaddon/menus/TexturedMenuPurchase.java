@@ -1,7 +1,6 @@
 package me.datatags.ultracosmeticsguiaddon.menus;
 
 import be.isach.ultracosmetics.UltraCosmetics;
-import be.isach.ultracosmetics.menu.Button;
 import be.isach.ultracosmetics.menu.MenuPurchase;
 import be.isach.ultracosmetics.menu.PurchaseData;
 import be.isach.ultracosmetics.menu.buttons.PurchaseCancelButton;
@@ -10,10 +9,8 @@ import be.isach.ultracosmetics.menu.buttons.PurchaseShowcaseButton;
 import be.isach.ultracosmetics.player.UltraPlayer;
 import be.isach.ultracosmetics.shaded.adventure.text.Component;
 import be.isach.ultracosmetics.shaded.adventure.text.format.NamedTextColor;
-import me.datatags.ultracosmeticsguiaddon.UltraCosmeticsGUIAddon;
 import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleButtonWrapper;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 
 public class TexturedMenuPurchase extends MenuPurchase {
     public TexturedMenuPurchase(UltraCosmetics ultraCosmetics, Component name, PurchaseData purchaseData) {

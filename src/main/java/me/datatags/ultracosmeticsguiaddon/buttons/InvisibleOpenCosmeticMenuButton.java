@@ -6,12 +6,10 @@ import be.isach.ultracosmetics.cosmetics.Category;
 import be.isach.ultracosmetics.menu.ClickData;
 import be.isach.ultracosmetics.menu.buttons.OpenCosmeticMenuButton;
 import be.isach.ultracosmetics.player.UltraPlayer;
-import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class InvisibleOpenCosmeticMenuButton extends InvisibleButtonWrapper {
     private final Category category;
