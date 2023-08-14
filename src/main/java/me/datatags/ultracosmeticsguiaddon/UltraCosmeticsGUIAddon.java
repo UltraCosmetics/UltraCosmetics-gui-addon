@@ -12,24 +12,15 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class UltraCosmeticsGUIAddon extends JavaPlugin implements UCAddon {
+public class UltraCosmeticsGUIAddon extends JavaPlugin {
     @Override
     public void onEnable() {
         UltraCosmetics ultraCosmetics = UltraCosmeticsData.get().getPlugin();
-        ultraCosmetics.registerAddon(this);
-        reload(ultraCosmetics);
-    }
-
-    @Override
-    public void reload(UltraCosmetics ultraCosmetics) {
-        HandlerList.unregisterAll(this);
-        saveDefaultConfig();
-        if (getConfig().getBoolean("Send pack to players", true)) {
-            getServer().getPluginManager().registerEvents(new ResourcePackListener(this), this);
+        String version = ultraCosmetics.getDescription().getVersion().split("-")[0];
+        if (Double.parseDouble(version) < 3.4) {
+            throw new IllegalStateException("This addon requires UltraCosmetics 3.4 or higher!");
         }
-        getLogger().info("Loading menus");
-        Menus menus = ultraCosmetics.getMenus();
-        menus.setMainMenu(new TexturedMainMenu(ultraCosmetics));
-        menus.setMenuPurchaseFactory(TexturedMenuPurchase::new);
+        // Registers itself in order to avoid assuming the existence of UCAddon at runtime
+        new GUIAddon(ultraCosmetics, this);
     }
 }
