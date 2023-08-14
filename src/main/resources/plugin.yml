@@ -1,5 +1,5 @@
 name: UltraCosmeticsGUIAddon
-version: 1.0
+version: @VERSION@
 api-version: 1.14
 authors:
   - datatags

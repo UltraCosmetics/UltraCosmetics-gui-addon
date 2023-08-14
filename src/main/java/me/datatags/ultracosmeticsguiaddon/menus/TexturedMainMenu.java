@@ -8,11 +8,11 @@ import be.isach.ultracosmetics.menu.Menu;
 import be.isach.ultracosmetics.menu.buttons.ClearCosmeticButton;
 import be.isach.ultracosmetics.menu.buttons.KeysButton;
 import be.isach.ultracosmetics.menu.buttons.OpenChestButton;
+import be.isach.ultracosmetics.menu.buttons.OpenCosmeticMenuButton;
 import be.isach.ultracosmetics.player.UltraPlayer;
 import be.isach.ultracosmetics.shaded.adventure.text.Component;
 import be.isach.ultracosmetics.shaded.adventure.text.format.NamedTextColor;
 import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleButtonWrapper;
-import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleOpenCosmeticMenuButton;
 import org.bukkit.inventory.Inventory;
 
 /**
@@ -35,7 +35,7 @@ public class TexturedMainMenu extends Menu {
     }
 
     public TexturedMainMenu(UltraCosmetics ultraCosmetics) {
-        super(ultraCosmetics);
+        super("main", ultraCosmetics);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class TexturedMainMenu extends Menu {
     }
 
     protected void putCategory(Inventory inventory, int slot, Category category, UltraPlayer player) {
-        putItem(inventory, slot, new InvisibleOpenCosmeticMenuButton(getUltraCosmetics(), category), player);
+        putInvisibleItem(inventory, slot, new OpenCosmeticMenuButton(getUltraCosmetics(), category), player);
     }
 
     protected void putInvisibleItem(Inventory inventory, int slot, Button button, UltraPlayer player) {
