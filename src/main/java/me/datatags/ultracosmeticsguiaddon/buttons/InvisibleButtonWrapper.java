@@ -8,7 +8,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class InvisibleButtonWrapper implements Button {
-    private final Button wrapped;
+    protected final Button wrapped;
     public InvisibleButtonWrapper(Button wrapped) {
         this.wrapped = wrapped;
     }

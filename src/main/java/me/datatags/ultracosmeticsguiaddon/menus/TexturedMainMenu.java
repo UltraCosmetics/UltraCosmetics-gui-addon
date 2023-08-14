@@ -2,18 +2,17 @@ package me.datatags.ultracosmeticsguiaddon.menus;
 
 import be.isach.ultracosmetics.UltraCosmetics;
 import be.isach.ultracosmetics.UltraCosmeticsData;
-import be.isach.ultracosmetics.config.MessageManager;
 import be.isach.ultracosmetics.cosmetics.Category;
 import be.isach.ultracosmetics.menu.Button;
 import be.isach.ultracosmetics.menu.Menu;
 import be.isach.ultracosmetics.menu.buttons.ClearCosmeticButton;
 import be.isach.ultracosmetics.menu.buttons.KeysButton;
 import be.isach.ultracosmetics.menu.buttons.OpenChestButton;
-import be.isach.ultracosmetics.menu.buttons.OpenCosmeticMenuButton;
 import be.isach.ultracosmetics.player.UltraPlayer;
 import be.isach.ultracosmetics.shaded.adventure.text.Component;
 import be.isach.ultracosmetics.shaded.adventure.text.format.NamedTextColor;
 import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleButtonWrapper;
+import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleOpenCosmeticMenuButton;
 import org.bukkit.inventory.Inventory;
 
 /**
@@ -71,7 +70,7 @@ public class TexturedMainMenu extends Menu {
     }
 
     protected void putCategory(Inventory inventory, int slot, Category category, UltraPlayer player) {
-        putInvisibleItem(inventory, slot, new OpenCosmeticMenuButton(getUltraCosmetics(), category), player);
+        putItem(inventory, slot, new InvisibleOpenCosmeticMenuButton(getUltraCosmetics(), category), player);
     }
 
     protected void putInvisibleItem(Inventory inventory, int slot, Button button, UltraPlayer player) {
