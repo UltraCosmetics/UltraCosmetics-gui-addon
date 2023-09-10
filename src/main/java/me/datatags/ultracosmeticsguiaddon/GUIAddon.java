@@ -6,7 +6,10 @@ import be.isach.ultracosmetics.menu.Menus;
 import me.datatags.ultracosmeticsguiaddon.menus.TexturedMainMenu;
 import me.datatags.ultracosmeticsguiaddon.menus.TexturedMenuPurchase;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.event.HandlerList;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class GUIAddon implements UCAddon {
     private final UltraCosmeticsGUIAddon plugin;
@@ -26,5 +29,10 @@ public class GUIAddon implements UCAddon {
         Menus menus = ultraCosmetics.getMenus();
         menus.setMainMenu(new TexturedMainMenu(ultraCosmetics));
         menus.setMenuPurchaseFactory(TexturedMenuPurchase::new);
+        ItemStack treasureKeyBaseItem = new ItemStack(Material.QUARTZ);
+        ItemMeta meta = treasureKeyBaseItem.getItemMeta();
+        meta.setCustomModelData(1);
+        treasureKeyBaseItem.setItemMeta(meta);
+        menus.setTreasureKeyBaseItem(treasureKeyBaseItem);
     }
 }
