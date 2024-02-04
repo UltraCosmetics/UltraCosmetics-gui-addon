@@ -1,0 +1,17 @@
+name: ? Feature request
+description: "Have an idea for a new feature in UltraCosmetics-gui-addon? Suggest it here!"
+labels: ["enhancement"]
+body:
+  - type: textarea
+    attributes:
+      label: "Describe the feature and how it would be used"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Are there alternatives?"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional information
