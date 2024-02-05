@@ -14,16 +14,18 @@ repositories {
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
+    maven {
+        url = 'https://repo.codemc.io/repository/maven-snapshots/'
+    }
+    maven {
+        url = 'https://jitpack.io'
+    }
 }
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT'
-    implementation ('be.isach.UltraCosmetics:core:3.4') {
-        attributes {
-            // Depend on the version with dependencies shaded so we don't need to shade them separately
-            attribute(Bundling.BUNDLING_ATTRIBUTE, getObjects().named(Bundling, Bundling.SHADOWED))
-        }
-    }
+    // TODO: change this to a tag that works
+    implementation 'com.github.UltraCosmetics:UltraCosmetics:master-SNAPSHOT'
 }
 
 processResources {
