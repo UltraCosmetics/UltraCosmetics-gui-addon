@@ -2,10 +2,11 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
     id 'java-library'
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group 'me.datatags'
-version '1.1'
+version '1.1.1'
 
 repositories {
     mavenLocal()
@@ -25,7 +26,8 @@ repositories {
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT'
     // TODO: change this to a tag that works
-    implementation 'com.github.UltraCosmetics:UltraCosmetics:master-SNAPSHOT'
+    compileOnly 'com.github.UltraCosmetics:UltraCosmetics:master-SNAPSHOT'
+    implementation 'org.bstats:bstats-bukkit:3.0.2'
 }
 
 processResources {
@@ -34,4 +36,10 @@ processResources {
     filter ReplaceTokens, tokens: [
             'VERSION'   : project.version,
     ]
+}
+
+shadowJar {
+    minimize()
+    def path = 'me.datatags.ultracosmeticsguiaddon.shaded'
+    relocate('org.bstats', path + '.bstats')
 }
