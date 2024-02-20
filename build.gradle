@@ -24,7 +24,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.20.4-R0.1-20240209.081002-77'
+    // Latest Spigot 1.20.4 API doesn't support Java 8
+    compileOnly 'org.spigotmc:spigot-api:1.20.3-R0.1-SNAPSHOT'
     // TODO: change this to a tag that works
     compileOnly 'com.github.UltraCosmetics:UltraCosmetics:master-SNAPSHOT'
     implementation 'org.bstats:bstats-bukkit:3.0.2'
