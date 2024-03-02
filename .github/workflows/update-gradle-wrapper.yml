@@ -1,0 +1,29 @@
+name: Update Gradle Wrapper
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+
+jobs:
+  update-gradle-wrapper:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # https://github.com/actions/checkout
+      - name: Check out Git repository
+        uses: actions/checkout@v4.1.1
+
+      # https://github.com/gradle/wrapper-validation-action
+      - name: Validate gradle wrapper
+        uses: gradle/wrapper-validation-action@v2.1.1
+
+      - name: Make Gradlew executable
+        run: chmod +x ./gradlew
+
+      # https://github.com/gradle-update/update-gradle-wrapper-action
+      - name: Update Gradle Wrapper
+        uses: gradle-update/update-gradle-wrapper-action@v1.0.20
+        with:
+          release-channel: stable
+          labels: dependencies, java
