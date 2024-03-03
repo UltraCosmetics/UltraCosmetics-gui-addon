@@ -7,8 +7,8 @@ import be.isach.ultracosmetics.menu.buttons.PurchaseCancelButton;
 import be.isach.ultracosmetics.menu.buttons.PurchaseConfirmButton;
 import be.isach.ultracosmetics.menu.buttons.PurchaseShowcaseButton;
 import be.isach.ultracosmetics.player.UltraPlayer;
-import be.isach.ultracosmetics.shaded.adventure.text.Component;
-import be.isach.ultracosmetics.shaded.adventure.text.format.NamedTextColor;
+import be.isach.ultracosmetics.shaded.kyori.adventure.text.Component;
+import be.isach.ultracosmetics.shaded.kyori.adventure.text.format.NamedTextColor;
 import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleButtonWrapper;
 import org.bukkit.inventory.Inventory;
 
