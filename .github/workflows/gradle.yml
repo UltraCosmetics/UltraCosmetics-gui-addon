@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v4.1.1 # https://github.com/actions/checkout/releases
+        uses: actions/checkout@v4.1.2 # https://github.com/actions/checkout/releases
       - name: Set up JDK 8
         uses: actions/setup-java@v4.1.0 # https://github.com/actions/setup-java/releases
         with:
