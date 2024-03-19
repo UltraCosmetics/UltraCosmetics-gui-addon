@@ -21,6 +21,7 @@ repositories {
     maven {
         url = 'https://repo.codemc.io/repository/maven-snapshots/'
     }
+
     // UltraCosmetics
     maven {
         url = 'https://jitpack.io'
