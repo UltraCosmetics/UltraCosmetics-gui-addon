@@ -18,7 +18,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew shadowJar --no-daemon
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4.3.1 # https://github.com/actions/upload-artifact/releases
+        uses: actions/upload-artifact@v4.3.2 # https://github.com/actions/upload-artifact/releases
         with:
           name: UltraCosmetics-gui-addon-dev
           path: build/libs/UltraCosmetics-gui-addon-*-all.jar
