@@ -16,7 +16,7 @@ jobs:
 
       # https://github.com/gradle/wrapper-validation-action
       - name: Wrapper Validation
-        uses: gradle/actions/wrapper-validation@v3.3.0
+        uses: gradle/actions/wrapper-validation@v3.3.1
 
       - name: Make Gradlew executable
         run: chmod +x ./gradlew
