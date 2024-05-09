@@ -26,4 +26,4 @@ jobs:
         uses: gradle-update/update-gradle-wrapper-action@v1.0.20
         with:
           release-channel: stable
-          labels: dependencies, java
+          labels: dependencies
