@@ -27,7 +27,6 @@ repositories {
 }
 
 dependencies {
-    // Latest Spigot 1.20.4 API doesn't support Java 8
     compileOnly 'org.spigotmc:spigot-api:1.20.3-R0.1-SNAPSHOT'
     compileOnly 'com.github.UltraCosmetics:UltraCosmetics:3.5-DEV-b1'
     implementation 'org.bstats:bstats-bukkit:3.0.2'
