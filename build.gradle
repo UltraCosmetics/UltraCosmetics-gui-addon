@@ -2,7 +2,8 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
     id 'java-library'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    // https://github.com/Goooler/shadow
+    id 'io.github.goooler.shadow' version '8.1.7'
 }
 
 group 'me.datatags.ultracosmetics'
