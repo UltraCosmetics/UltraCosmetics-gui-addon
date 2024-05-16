@@ -1,9 +1,0 @@
-name: UltraCosmeticsGUIAddon
-version: @VERSION@
-api-version: 1.14
-authors:
-  - datatags
-  - dennishzg
-main: me.datatags.ultracosmeticsguiaddon.UltraCosmeticsGUIAddon
-depend:
-  - UltraCosmetics

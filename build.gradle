@@ -2,7 +2,10 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
     id 'java-library'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    // https://github.com/Goooler/shadow
+    id 'io.github.goooler.shadow' version '8.1.7'
+    // https://github.com/Minecrell/plugin-yml
+    id 'net.minecrell.plugin-yml.bukkit' version '0.6.0'
 }
 
 group 'me.datatags.ultracosmetics'
@@ -16,23 +19,35 @@ repositories {
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
-
     // Dependencies
     maven {
         url = 'https://repo.codemc.io/repository/maven-snapshots/'
     }
-
     // UltraCosmetics
     maven {
-        url = 'https://jitpack.io'
+        url = 'https://jitpack.io/'
     }
 }
 
 dependencies {
-    // Latest Spigot 1.20.4 API doesn't support Java 8
+    library 'com.google.code.gson:gson:2.10.1'
     compileOnly 'org.spigotmc:spigot-api:1.20.3-R0.1-SNAPSHOT'
     compileOnly 'com.github.UltraCosmetics:UltraCosmetics:3.5-DEV-b1'
     implementation 'org.bstats:bstats-bukkit:3.0.2'
+}
+
+shadowJar {
+    minimize()
+    def path = 'me.datatags.ultracosmeticsguiaddon.shaded'
+    relocate('org.bstats', path + '.bstats')
+}
+
+
+bukkit {
+    main = 'me.datatags.ultracosmeticsguiaddon.UltraCosmeticsGUIAddon'
+    apiVersion = '1.17'
+    authors = ['datatags', 'dennishzg']
+    depend = ['UltraCosmetics']
 }
 
 processResources {
@@ -41,10 +56,4 @@ processResources {
     filter ReplaceTokens, tokens: [
             'VERSION'   : project.version,
     ]
-}
-
-shadowJar {
-    minimize()
-    def path = 'me.datatags.ultracosmeticsguiaddon.shaded'
-    relocate('org.bstats', path + '.bstats')
 }
