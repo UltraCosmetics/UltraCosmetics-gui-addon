@@ -7,9 +7,9 @@ import be.isach.ultracosmetics.menu.buttons.PurchaseCancelButton;
 import be.isach.ultracosmetics.menu.buttons.PurchaseConfirmButton;
 import be.isach.ultracosmetics.menu.buttons.PurchaseShowcaseButton;
 import be.isach.ultracosmetics.player.UltraPlayer;
-import be.isach.ultracosmetics.shaded.kyori.adventure.text.Component;
-import be.isach.ultracosmetics.shaded.kyori.adventure.text.format.NamedTextColor;
 import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleButtonWrapper;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.inventory.Inventory;
 
 public class TexturedMenuPurchase extends MenuPurchase {
@@ -18,13 +18,7 @@ public class TexturedMenuPurchase extends MenuPurchase {
     }
 
     private static String generateTitle() {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < 8; i++) {
-            // Dice emoji
-            builder.append("\uD83C\uDFB2");
-        }
-        // Coin emoji
-        return builder.append("\uD83E\uDE99").toString();
+        return /* dice emoji */ "\uD83C\uDFB2".repeat(8) + /* Coin emoji */ "\uD83E\uDE99";
     }
 
     @Override

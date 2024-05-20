@@ -10,9 +10,9 @@ import be.isach.ultracosmetics.menu.buttons.KeysButton;
 import be.isach.ultracosmetics.menu.buttons.OpenChestButton;
 import be.isach.ultracosmetics.menu.buttons.OpenCosmeticMenuButton;
 import be.isach.ultracosmetics.player.UltraPlayer;
-import be.isach.ultracosmetics.shaded.kyori.adventure.text.Component;
-import be.isach.ultracosmetics.shaded.kyori.adventure.text.format.NamedTextColor;
 import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleButtonWrapper;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.inventory.Inventory;
 
 /**
@@ -25,13 +25,7 @@ public class TexturedMainMenu extends Menu {
     private final Component title = Component.text(generateTitle(), NamedTextColor.WHITE);
 
     private static String generateTitle() {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < 8; i++) {
-            // Dice emoji
-            builder.append("\uD83C\uDFB2");
-        }
-        // House emoji
-        return builder.append("\uD83C\uDFE0").toString();
+        return /* dice emoji */ "\uD83C\uDFB2".repeat(8) + /* House emoji */ "\uD83C\uDFE0";
     }
 
     public TexturedMainMenu(UltraCosmetics ultraCosmetics) {
