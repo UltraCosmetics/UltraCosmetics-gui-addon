@@ -39,7 +39,7 @@ dependencies {
     library 'com.google.code.gson:gson:2.11.0'
     library "net.kyori:adventure-platform-bukkit:4.3.3"
     compileOnly 'org.spigotmc:spigot-api:1.20.6-R0.1-SNAPSHOT'
-    compileOnly 'com.github.UltraCosmetics:UltraCosmetics:3.6-DEV-b1'
+    compileOnly 'com.github.UltraCosmetics:UltraCosmetics:3.6-DEV-b2'
     implementation 'org.bstats:bstats-bukkit:3.0.2'
 }
 
