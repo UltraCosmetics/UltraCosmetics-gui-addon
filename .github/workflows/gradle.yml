@@ -33,6 +33,9 @@ jobs:
       - name: Configure Git
         run: git config --global user.name "Github Actions" && git config --global user.email "actions@github.com"
 
+      - name: Make Gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle
         run: ./gradlew shadowJar --no-daemon
 
