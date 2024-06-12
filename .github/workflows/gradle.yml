@@ -1,4 +1,4 @@
-name: Build with Gradle
+name: Build Gradle
 
 on: [ push, pull_request ]
 
@@ -36,7 +36,7 @@ jobs:
       - name: Make Gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Build with Gradle
+      - name: Build project
         run: ./gradlew shadowJar --no-daemon
 
       # https://github.com/actions/upload-artifact/releases
@@ -44,4 +44,4 @@ jobs:
         uses: actions/upload-artifact@v4.3.3
         with:
           name: UltraCosmetics-gui-addon-dev
-          path: build/libs/UltraCosmetics-gui-addon-*-all.jar
+          path: build/libs/UltraCosmetics-gui-addon-*.jar
