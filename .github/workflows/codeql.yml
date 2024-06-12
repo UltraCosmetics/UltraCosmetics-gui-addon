@@ -1,5 +1,6 @@
 name: CodeQL
 
+
 on:
   push:
     branches: ["master"]
@@ -7,6 +8,7 @@ on:
     branches: ["master"]
   schedule:
     - cron: '0 23 * * 0'
+
 
 jobs:
   analyze:
