@@ -18,11 +18,11 @@ jobs:
 
       # https://github.com/gradle/gradle-build-action
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3.4.1
+        uses: gradle/actions/setup-gradle@v3.4.2
 
       # https://github.com/gradle/wrapper-validation-action
       - name: Wrapper validation
-        uses: gradle/actions/wrapper-validation@v3.4.1
+        uses: gradle/actions/wrapper-validation@v3.4.2
 
       # https://github.com/actions/setup-java/releases
       - name: Set up JDK 17
