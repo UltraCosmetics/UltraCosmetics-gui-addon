@@ -51,6 +51,7 @@ shadowJar {
 
 
 bukkit {
+    name = 'UltraCosmeticsGUIAddon'
     main = 'me.datatags.ultracosmeticsguiaddon.UltraCosmeticsGUIAddon'
     apiVersion = '1.17'
     authors = ['datatags', 'dennishzg']
