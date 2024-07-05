@@ -45,7 +45,7 @@ jobs:
 
       # https://github.com/actions/upload-artifact/releases
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4.3.3
+        uses: actions/upload-artifact@v4.3.4
         with:
           name: UltraCosmetics-gui-addon-dev
           path: build/libs/UltraCosmetics-gui-addon-*.jar
