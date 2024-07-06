@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      # https://github.com/actions/checkout/releases
+      # https://github.com/actions/checkout
       - name: Check out Git repository
         uses: actions/checkout@v4.1.7
 
@@ -24,7 +24,7 @@ jobs:
       - name: Wrapper validation
         uses: gradle/actions/wrapper-validation@v3.4.2
 
-      # https://github.com/actions/setup-java/releases
+      # https://github.com/actions/setup-java
       - name: Set up JDK 17
         uses: actions/setup-java@v4.2.1
         with:
@@ -43,7 +43,7 @@ jobs:
       - name: Build project
         run: ./gradlew shadowJar --no-daemon
 
-      # https://github.com/actions/upload-artifact/releases
+      # https://github.com/actions/upload-artifact
       - name: Upload build artifact
         uses: actions/upload-artifact@v4.3.4
         with:
