@@ -48,7 +48,6 @@ shadowJar {
     relocate('org.bstats', path + '.bstats')
 }
 
-
 bukkit {
     name = 'UltraCosmeticsGUIAddon'
     authors = ['datatags', 'dennishzg']
