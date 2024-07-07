@@ -22,24 +22,23 @@ repositories {
     mavenCentral()
 
     // SpigotMC
-    maven {
-        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-    }
+    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
     // Dependencies
-    maven {
-        url = 'https://repo.codemc.io/repository/maven-snapshots/'
-    }
+    maven { url = 'https://repo.codemc.io/repository/maven-snapshots/' }
     // UltraCosmetics
-    maven {
-        url = 'https://jitpack.io/'
-    }
+    maven { url = 'https://jitpack.io/' }
 }
 
 dependencies {
+    // https://github.com/google/gson
     library 'com.google.code.gson:gson:2.11.0'
-    library "net.kyori:adventure-platform-bukkit:4.3.3"
+    // https://github.com/KyoriPowered/adventure
+    library 'net.kyori:adventure-platform-bukkit:4.3.3'
+    // https://hub.spigotmc.org/stash/projects/SPIGOT/repos/spigot/browse
     compileOnly 'org.spigotmc:spigot-api:1.20.6-R0.1-SNAPSHOT'
+    // https://github.com/UltraCosmetics/UltraCosmetics
     compileOnly 'com.github.UltraCosmetics:UltraCosmetics:3.6.0.1-RELEASE'
+    // https://github.com/Bastian/bstats-metrics
     implementation 'org.bstats:bstats-bukkit:3.0.2'
 }
 
@@ -49,12 +48,11 @@ shadowJar {
     relocate('org.bstats', path + '.bstats')
 }
 
-
 bukkit {
     name = 'UltraCosmeticsGUIAddon'
+    authors = ['datatags', 'dennishzg']
     main = 'me.datatags.ultracosmeticsguiaddon.UltraCosmeticsGUIAddon'
     apiVersion = '1.17'
-    authors = ['datatags', 'dennishzg']
     depend = ['UltraCosmetics']
 }
 
