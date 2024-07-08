@@ -29,3 +29,4 @@ jobs:
         with:
           release-channel: stable
           labels: dependencies
+          reviewers: BySwiizen
