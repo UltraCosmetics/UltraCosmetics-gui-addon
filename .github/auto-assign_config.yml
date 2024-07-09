@@ -1,0 +1,10 @@
+addReviewers: true
+
+addAssignees: author
+
+reviewers:
+  - BySwiizen
+
+numberOfReviewers: 1
+
+numberOfAssignees: 1
