@@ -1,4 +1,4 @@
-name: Auto Assign - dependabot
+name: Auto Assign - DEPENDABOT
 
 
 on:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   add-reviews:
+
     if: github.actor == 'dependabot'
     runs-on: ubuntu-22.04
 
