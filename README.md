@@ -12,34 +12,34 @@ UltraCosmetics GUI Addon is a [UltraCosmetics](https://github.com/datatags/Ultra
 
 ---
 
-## ? Compatibility
+## ✅ Compatibility
 
 UltraCosmetics GUI Addon officially supports the **Spigot** and **Paper**.
 
-## ? Download
+## 📥 Download
 
 You can download the latest stable release of UltraCosmetics GUI Addon from our official links:
 
 - [SpigotMC][spigotmc-link]
 - [GitHub][github-releases-link]
 
-## ? Report a Bug
+## 🐛 Report a Bug
 
 Please use the [Issues](https://github.com/UltraCosmetics/UltraCosmetics-gui-addon/issues) on GitHub to report a bug.
 
 When creating an issue, please make sure you're using the bug report issue template!
 
-## ? Support
+## ❓ Support
 
 For questions and support please visit our [Discord][discord-invite].
 The Issues page of this repository is **exclusively** for bug reports and feature requests.
 
-## ? Development
+## 💻 Development
 
 [![CI Status](https://github.com/UltraCosmetics/UltraCosmetics-gui-addon/actions/workflows/gradle.yml/badge.svg)](https://github.com/UltraCosmetics/UltraCosmetics/actions/workflows/gradle.yml)
 [![CodeQL Status](https://github.com/UltraCosmetics/UltraCosmetics-gui-addon/actions/workflows/codeql.yml/badge.svg)](https://github.com/UltraCosmetics/UltraCosmetics/actions/workflows/codeql.yml)
 
-## ? License
+## 📄 License
 
 [GNU Affero General Public License v3.0](./LICENSE)
 
