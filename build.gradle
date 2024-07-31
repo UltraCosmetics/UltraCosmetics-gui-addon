@@ -37,7 +37,7 @@ dependencies {
     // https://hub.spigotmc.org/stash/projects/SPIGOT/repos/spigot/browse
     compileOnly 'org.spigotmc:spigot-api:1.21-R0.1-SNAPSHOT'
     // https://github.com/UltraCosmetics/UltraCosmetics
-    compileOnly 'com.github.UltraCosmetics:UltraCosmetics:3.6.0.1-RELEASE'
+    compileOnly 'com.github.UltraCosmetics:UltraCosmetics:3.7-RELEASE'
     // https://github.com/Bastian/bstats-metrics
     implementation 'org.bstats:bstats-bukkit:3.0.2'
 }
