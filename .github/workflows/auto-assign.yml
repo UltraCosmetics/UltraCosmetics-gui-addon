@@ -1,4 +1,4 @@
-name: Auto Assign - OTHER
+name: Auto Assign
 
 
 on:
@@ -17,4 +17,4 @@ jobs:
       - name: Auto Assign
         uses: kentaro-m/auto-assign-action@v2.0.0
         with:
-          configuration-path: .github/auto-assign-other_config.yml
+          configuration-path: .github/auto-assign_config.yml
