@@ -5,3 +5,5 @@ addAssignees: author
 reviewers:
   - BySwiizen
   - datatags
+
+numberOfReviewers: 2
