@@ -1,4 +1,4 @@
-name: Auto Assign - DEPENDABOT
+name: Auto Assign
 
 
 on:
@@ -10,7 +10,6 @@ on:
 jobs:
   add-reviews:
 
-    if: github.actor == 'dependabot'
     runs-on: ubuntu-22.04
 
     steps:
@@ -18,4 +17,4 @@ jobs:
       - name: Auto Assign
         uses: kentaro-m/auto-assign-action@v2.0.0
         with:
-          configuration-path: .github/auto-assign-dependabot_config.yml
+          configuration-path: .github/auto-assign_config.yml
