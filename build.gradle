@@ -33,7 +33,7 @@ dependencies {
     // https://github.com/google/gson
     library 'com.google.code.gson:gson:2.11.0'
     // https://github.com/KyoriPowered/adventure
-    library 'net.kyori:adventure-platform-bukkit:4.3.3'
+    library 'net.kyori:adventure-platform-bukkit:4.3.4'
     // https://hub.spigotmc.org/stash/projects/SPIGOT/repos/spigot/browse
     compileOnly 'org.spigotmc:spigot-api:1.21-R0.1-SNAPSHOT'
     // https://github.com/UltraCosmetics/UltraCosmetics
