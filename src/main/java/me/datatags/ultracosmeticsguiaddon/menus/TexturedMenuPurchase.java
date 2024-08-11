@@ -7,9 +7,9 @@ import be.isach.ultracosmetics.menu.buttons.PurchaseCancelButton;
 import be.isach.ultracosmetics.menu.buttons.PurchaseConfirmButton;
 import be.isach.ultracosmetics.menu.buttons.PurchaseShowcaseButton;
 import be.isach.ultracosmetics.player.UltraPlayer;
+import be.isach.ultracosmetics.shaded.kyori.adventure.text.Component;
+import be.isach.ultracosmetics.shaded.kyori.adventure.text.format.NamedTextColor;
 import me.datatags.ultracosmeticsguiaddon.buttons.InvisibleButtonWrapper;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.inventory.Inventory;
 
 public class TexturedMenuPurchase extends MenuPurchase {
