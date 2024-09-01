@@ -10,7 +10,7 @@ on:
 jobs:
   add-reviews:
 
-    if: github.actor != ''
+    if: github.actor != 'renovate[bot]'
     runs-on: ubuntu-22.04
 
     steps:
