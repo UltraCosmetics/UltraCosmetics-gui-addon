@@ -10,7 +10,7 @@ on:
 jobs:
   add-reviews:
 
-    if: github.actor != 'dependabot[bot]'
+    if: github.actor != ''
     runs-on: ubuntu-22.04
 
     steps:
