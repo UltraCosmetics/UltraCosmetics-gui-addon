@@ -1,13 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":semanticCommitsDisabled"
   ],
-
-  "labels": ["dependencies"],
-  "reviewers": ["BySwiizen"],
-
+  "labels": [
+    "dependencies"
+  ],
+  "reviewers": [
+    "BySwiizen"
+  ],
   "automerge": true,
   "rebaseWhen": "conflicted"
 }
