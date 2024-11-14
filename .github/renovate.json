@@ -11,5 +11,6 @@
     "BySwiizen"
   ],
   "automerge": true,
-  "rebaseWhen": "conflicted"
+  "rebaseWhen": "conflicted",
+  "rangeStrategy": "bump"
 }
