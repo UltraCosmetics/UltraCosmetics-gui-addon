@@ -12,5 +12,10 @@
   ],
   "automerge": true,
   "rebaseWhen": "conflicted",
-  "rangeStrategy": "bump"
+  "packageRules": [
+    {
+      "matchPackageNames": ["org.spigotmc:spigot-api"],
+      "versioning": "maven"
+    }
+  ]
 }
