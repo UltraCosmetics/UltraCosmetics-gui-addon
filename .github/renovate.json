@@ -15,7 +15,7 @@
   "packageRules": [
     {
       "matchPackageNames": ["org.spigotmc:spigot-api"],
-      "versioning": "maven"
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)(\\.(?<patch>\\d+))?-(?<compatibility>.*)$"
     }
   ]
 }
