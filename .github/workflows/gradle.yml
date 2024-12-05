@@ -51,5 +51,5 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: UltraCosmetics-gui-addon-dev
+          name: UltraCosmetics-GUI-Addon
           path: build/libs/UltraCosmetics-gui-addon-*.jar
