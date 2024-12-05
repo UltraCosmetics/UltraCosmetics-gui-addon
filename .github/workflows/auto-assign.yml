@@ -10,8 +10,9 @@ on:
 jobs:
   add-reviews:
 
-    if: github.actor != 'renovate[bot]'
     runs-on: ubuntu-24.04
+
+    if: github.actor != 'renovate[bot]'
 
     steps:
       # https://github.com/kentaro-m/auto-assign-action
