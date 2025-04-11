@@ -31,7 +31,7 @@ repositories {
 
 dependencies {
     // https://github.com/google/gson
-    library 'com.google.code.gson:gson:2.12.1'
+    library 'com.google.code.gson:gson:2.13.0'
     // https://hub.spigotmc.org/stash/projects/SPIGOT/repos/spigot/browse
     compileOnly 'org.spigotmc:spigot-api:1.21.5-R0.1-SNAPSHOT'
     // https://github.com/UltraCosmetics/UltraCosmetics
