@@ -6,18 +6,17 @@ import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class UltraCosmeticsGUIAddon extends JavaPlugin {
-    public static final Double MIN_REQUIRED_VERSION = 3.6;
+    public static final int MIN_MAJOR_VERSION = 3;
+    public static final int MIN_MINOR_VERSION = 6;
     @Override
     public void onEnable() {
         UltraCosmetics ultraCosmetics = UltraCosmeticsData.get().getPlugin();
-        String version = ultraCosmetics.getDescription().getVersion().split("-")[0];
-        String minor = version.substring(2);
-        // If there's more than two components to the version, strip it down to 2 so we can parse it as a number
-        if (minor.contains(".")) {
-            version = version.substring(0, 2) + minor.substring(0, minor.indexOf('.'));
-        }
-        if (Double.parseDouble(version) < MIN_REQUIRED_VERSION) {
-            throw new IllegalStateException("This addon requires UltraCosmetics " + MIN_REQUIRED_VERSION + " or higher!");
+        String[] parts = ultraCosmetics.getDescription().getVersion().split("-")[0].split("\\.");
+        int major = Integer.parseInt(parts[0]);
+        int minor = Integer.parseInt(parts[1]);
+        if (major < MIN_MAJOR_VERSION || (major == MIN_MAJOR_VERSION && minor < MIN_MINOR_VERSION)) {
+            String minVersion = MIN_MAJOR_VERSION + "." + MIN_MINOR_VERSION;
+            throw new IllegalStateException("This addon requires UltraCosmetics " + minVersion + " or higher!");
         }
         // Registers itself in order to avoid assuming the existence of UCAddon at runtime
         new GUIAddon(ultraCosmetics, this);

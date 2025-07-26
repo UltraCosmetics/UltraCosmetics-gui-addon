@@ -4,6 +4,7 @@ import be.isach.ultracosmetics.menu.Button;
 import be.isach.ultracosmetics.menu.ClickData;
 import be.isach.ultracosmetics.player.UltraPlayer;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -15,9 +16,9 @@ public class InvisibleButtonWrapper implements Button {
     @Override
     public ItemStack getDisplayItem(UltraPlayer ultraPlayer) {
         ItemStack stack = wrapped.getDisplayItem(ultraPlayer).clone();
-        stack.setType(Material.MAP);
+        stack.setType(Material.BRICK);
         ItemMeta meta = stack.getItemMeta();
-        meta.setCustomModelData(1010);
+        meta.setItemModel(NamespacedKey.fromString("ucgui:guis/invisibleitem"));
         stack.setItemMeta(meta);
         return stack;
     }

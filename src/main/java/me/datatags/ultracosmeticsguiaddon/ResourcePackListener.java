@@ -11,9 +11,9 @@ public class ResourcePackListener implements Listener {
     public ResourcePackListener(UltraCosmeticsGUIAddon plugin) {
         this.plugin = plugin;
     }
+
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        //Bukkit.getScheduler().runTaskLater(plugin, () -> event.getPlayer().setResourcePack(PACK_URL, PACK_HASH), 20);
         event.getPlayer().setResourcePack(PACK_URL, PACK_HASH);
     }
 

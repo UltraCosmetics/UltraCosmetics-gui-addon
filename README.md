@@ -45,7 +45,7 @@ The Issues page of this repository is **exclusively** for bug reports and featur
 
 ```text
 UltraCosmetics - Lightweight, Fun and Easy-to-Use Spigot Cosmetics plugin.
-Copyright (C) 2024 Datatags
+Copyright (C) 2025 Datatags
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
