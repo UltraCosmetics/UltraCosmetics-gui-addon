@@ -19,12 +19,13 @@ public class GUIAddon implements UCAddon {
         ultraCosmetics.registerAddon(this);
         reload(ultraCosmetics);
     }
+
     @Override
     public void reload(UltraCosmetics ultraCosmetics) {
         HandlerList.unregisterAll(plugin);
         plugin.saveDefaultConfig();
         if (plugin.getConfig().getBoolean("Send pack to players", true)) {
-            Bukkit.getPluginManager().registerEvents(new ResourcePackListener(plugin), plugin);
+            Bukkit.getPluginManager().registerEvents(new ResourcePackListener(), plugin);
         }
         plugin.getLogger().info("Loading menus");
         Menus menus = ultraCosmetics.getMenus();
