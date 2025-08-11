@@ -11,10 +11,19 @@
 UltraCosmetics GUI Addon is an addon for [UltraCosmetics](https://github.com/datatags/UltraCosmetics) that customizes the main and purchase menus with custom textures.
 Thanks to @dennishzg for creating the resource pack!
 - Aseprite source files are in `/aseprite/`.
-- Resource pack/GUI textures are in `/resourcepack/`.
+- Resource pack and GUI textures are in `/resourcepack/`.
 - Plugin files are in `/src/`.
 
 ---
+
+## 🧩 Official Addon
+
+> [!TIP]
+> You can use the official addon plugin if your server doesn't have a resource pack. Simply put the .jar in the plugins folder and you're done.
+> Download the plugin from one of these links:
+>
+> - [SpigotMC](https://www.spigotmc.org/resources/ultracosmetics-gui-addon.117279/)
+> - [GitHub](https://github.com/UltraCosmetics/UltraCosmetics-gui-addon)
 
 ## 🖼️ Preview
 
@@ -51,7 +60,7 @@ menu_title: "&f🎲🎲🎲🎲🎲🎲🎲🎲🏠"
 
 Example:
 
-```
+```text
 /minecraft:give @p minecraft:brick[minecraft:item_model="ucgui:uc_items/key"]
 ```
 
