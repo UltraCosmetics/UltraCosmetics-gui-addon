@@ -1,0 +1,25 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "ucgui:item/guis/pixel.png",
+      "ascent": -2000,
+      "height": -3,
+      "chars": ["🎲"]
+    },
+    {
+      "type": "bitmap",
+      "file": "ucgui:gui/menus/bg_main.png",
+      "ascent": 13,
+      "height": 125,
+      "chars": ["🏠"]
+    },
+    {
+      "type": "bitmap",
+      "file": "ucgui:gui/menus/bg_buy.png",
+      "ascent": 13,
+      "height": 125,
+      "chars": ["🪙"]
+    }
+  ]
+}

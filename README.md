@@ -8,13 +8,63 @@
 
 # UltraCosmetics GUI Addon
 
-UltraCosmetics GUI Addon is a [UltraCosmetics](https://github.com/datatags/UltraCosmetics) addon for [UC-GUI resource pack](https://github.com/dennishzg/uc-gui)!
+UltraCosmetics GUI Addon is an addon for [UltraCosmetics](https://github.com/datatags/UltraCosmetics) that customizes the main and purchase menus with custom textures.
+Thanks to @dennishzg for creating the resource pack!
+- Aseprite source files are in `/aseprite/`.
+- Resource pack/GUI textures are in `/resourcepack/`.
+- Plugin files are in `/src/`.
 
 ---
 
+## 🖼️ Preview
+
+### Main menu
+
+![Main menu](.github/readme-assets/preview-bg_main.png)
+
+### Buy menu (keys, cosmetics etc.)
+
+![Buy menu](.github/readme-assets/preview-bg_buy.png)
+
+## 🛠️ How to use
+
+### Add server resource pack
+
+By default, once the plugin is installed, it will suggest to clients to install the resource pack.
+Alternatively, you can disable that in the config and distribute the resource pack yourself; it can be downloaded in the Releases tab.
+
+### Create menu
+
+If you have a custom menu for UC, you can also use these textures there. Example menu using DeluxeMenus:
+
+#### GUI texture
+
+- 🏠 = Main menu texture
+- 🪙 = Buy menu texture
+
+```yaml
+size: 54
+menu_title: "&f🎲🎲🎲🎲🎲🎲🎲🎲🏠"
+```
+
+#### Custom items
+
+Example:
+
+```
+/minecraft:give @p minecraft:brick[minecraft:item_model="ucgui:uc_items/key"]
+```
+
+| Image         | Item model                 | Description                                                                   |
+|---------------|----------------------------|-------------------------------------------------------------------------------|
+| invisible     | `ucgui:guis/invisibleitem` | Invisible items are necessary to make the buttons/icons in the GUI clickable. |
+| ![Key][p-key] | `ucgui:uc_items/key`       | Treasure chest key                                                            |
+
 ## ✅ Compatibility
 
-UltraCosmetics GUI Addon officially supports the **Spigot** and **Paper**.
+UltraCosmetics GUI Addon officially supports both **Spigot** and **Paper**.
+
+The resource pack is designed for clients 1.21.4 and up.
 
 ## 📥 Download
 
@@ -64,3 +114,4 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 [discord-invite]: https://discord.gg/PgSXZT37JV
 [spigotmc-link]: https://www.spigotmc.org/resources/117279
 [github-releases-link]: https://github.com/UltraCosmetics/UltraCosmetics-gui-addon/releases
+[p-key]: .github/readme-assets/preview-key.png
