@@ -39,14 +39,14 @@ jobs:
 
     # https://github.com/github/codeql-action
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3.29.8
+      uses: github/codeql-action/init@v3.29.9
       with:
         languages: 'java'
 
     # https://github.com/github/codeql-action
     - name: Autobuild
-      uses: github/codeql-action/autobuild@v3.29.8
+      uses: github/codeql-action/autobuild@v3.29.9
 
     # https://github.com/github/codeql-action
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3.29.8
+      uses: github/codeql-action/analyze@v3.29.9
